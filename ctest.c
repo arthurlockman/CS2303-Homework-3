@@ -53,6 +53,5 @@ int main()
   printf("Before dup, pointer a2 = %p, contents = %s\n", a2, a2);
   p2 = mystrdup(a2);
   printf("Pointer p2 = %p, contents = %s\n", p2, p2);
-
   return 0;
 }
