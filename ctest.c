@@ -20,7 +20,7 @@ int main()
   char* p2;           // Will be a pointer to dynamically-allocated string
   int copy_limit;     // Maximum characters to copy.
 
-  mystrcpy(a3, "Hello, also"); // Initialize uinderfilled character array
+  strcpy(a3, "Hello, also"); // Initialize uinderfilled character array
 
   /* Print the pointers.
      Note: this example uses the %p format descriptor so it prints
@@ -29,7 +29,7 @@ int main()
   printf("Pointers: a1 = %p, a2 = %p, a3 = %p\n", a1, a2, a3);
   printf("          p1 = %p p2 = %p\n", p1, p2);
 
-  mystrcpy(a1, "Hi"); // Initialize character array
+  strcpy(a1, "Hi"); // Initialize character array
 
   printf("a1 = %s\n", a1);
   printf("a2 = %s\n", a2);
@@ -40,12 +40,12 @@ int main()
   printf("a1 = %s\n", a1);
 
   // Concatenate two character arrays safely, then print.
-  copy_limit = MAX_CHARS - mystrlen(a1); // How much space is left?
+  copy_limit = MAX_CHARS - strlen(a1); // How much space is left?
   if (copy_limit > 0) strncat(a1, a2, copy_limit);
   printf("a1 = %s\n", a1);
 
   // Concatenate two character arrays safely, then print.
-  copy_limit = MAX_CHARS - mystrlen(a1); // How much space is left?
+  copy_limit = MAX_CHARS - strlen(a1); // How much space is left?
   if (copy_limit > 0) strncat(a1, a3, copy_limit);
   printf("a1 = %s\n", a1);
 

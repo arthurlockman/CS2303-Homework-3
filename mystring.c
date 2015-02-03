@@ -24,7 +24,7 @@ char* mystrdup(const char* src)
     if (newstr == 0) return (char *) 0;
 
     // Otherwise, copy the string and return pointer to new string
-    strcpy(newstr, src);
+    mystrcpy(newstr, src);
     return newstr;
 }
 
