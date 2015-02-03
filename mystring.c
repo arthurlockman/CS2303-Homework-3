@@ -46,8 +46,25 @@ size_t mystrlen(const char* s)
     return char_next - s;
 }
 
+/** 
+ * @brief Copy one string to another.
+ * 
+ * @param dst The destination string. This will be overwritten by the source.
+ * @param src The source string.
+ * 
+ * @return The destination string (pointer).
+ */
 char* mystrcpy(char * dst, const char * src)
 {
+    const char* char_next;
+    char_next = src;
+    while(*char_next != '\0')
+    {
+        *dst = *char_next;
+        ++char_next;
+        ++dst;
+    }
+    *dst = *char_next;
     return dst;
 }
 
