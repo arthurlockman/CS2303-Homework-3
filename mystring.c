@@ -37,13 +37,8 @@ char* mystrdup(const char* src)
  */
 size_t mystrlen(const char* s)
 {
-    const char* char_next;
-    char_next = s;
-    while (*char_next != '\0')
-    {
-        ++char_next;
-    }
-    return char_next - s;
+    const char* i;
+    for (i = s; ; ++s) if (*s == '\0') return s - i;
 }
 
 /** 
