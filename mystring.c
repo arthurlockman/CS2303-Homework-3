@@ -41,25 +41,114 @@ size_t mystrlen(const char* s)
     for (i = s; ; ++s) if (*s == '\0') return s - i;
 }
 
-/** 
+/**
  * @brief Copy one string to another.
- * 
+ *
  * @param dst The destination string. This will be overwritten by the source.
  * @param src The source string.
- * 
+ *
  * @return The destination string (pointer).
  */
 char* mystrcpy(char * dst, const char * src)
 {
+    char* orig_dst = dst;
     const char* char_next;
     char_next = src;
-    while(*char_next != '\0')
+    while (*char_next != '\0')
     {
         *dst = *char_next;
         ++char_next;
         ++dst;
     }
     *dst = *char_next;
+    return orig_dst;
+}
+
+/**
+ * @brief Concatenate two strings, and add the first n characters
+ * of the source to the end of the destination. Also will add a null
+ * terminator at the end of the destination string.
+ *
+ * @param destination The destination of the concatenation.
+ * @param source The source to add to the end of the destination.
+ * @param num The number of characters to add.
+ *
+ * @return A pointer to the destination.
+ */
+char* mystrncat(char* destination, const char* source, size_t num)
+{
+    char* dst = destination;
+    while (*destination != '\0') ++destination;
+    int i;
+    for (i = 0; i < num; i++)
+    {
+        *destination = *source;
+        source++;
+        destination++;
+    }
+    *destination = '\0';
     return dst;
+}
+
+/**
+ * @brief Concatenate two strings. Appends the characters from source
+ * to the destination, and adds a null-terminator at the end.
+ *
+ * @param destination The destination for the concatenation.
+ * @param source The source to add to the destination.
+ *
+ * @return A pointer to the destination.
+ */
+char* mystrcat(char* destination, const char* source)
+{
+    char* dst = destination;
+    while (*destination != '\0') ++destination;
+    while (*source != '\0')
+    {
+        *destination = *source;
+        ++source;
+        ++destination;
+    }
+    *destination = '\0';
+    return dst;
+}
+
+/**
+ * @brief Copies a string from one to another with a specified
+ * limit on how many chacters can be copied. This ensures that
+ * copying a string can't run off the stack and overwrite something
+ * else in memory. NOTE: if the source is longer than the num
+ * parameter, then the string will not be implicitly null-terminated.
+ *
+ * @param destination The destination string.
+ * @param source The source string.
+ * @param num The number of chacters to copy.
+ *
+ * @return A pointer to the destination.
+ */
+char* mystrncpy(char* destination, const char* source, size_t num)
+{
+    char* dst = destination;
+    size_t i;
+    for (i = 0; i < num; i++)
+    {
+        *destination = *source;
+        if (*source != '\0')
+            ++source;
+        ++destination;
+    }
+    return dst;
+}
+
+/**
+ * @brief
+ *
+ * @param s
+ * @param n
+ *
+ * @return
+ */
+char* mystrndup(const char *s, size_t n)
+{
 }
 
