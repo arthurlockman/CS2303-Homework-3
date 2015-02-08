@@ -141,14 +141,24 @@ char* mystrncpy(char* destination, const char* source, size_t num)
 }
 
 /**
- * @brief
+ * @brief Performs a deep copy on a string into a new block
+ * of memory. Leaves the original intact. Returns a pointer to 
+ * the new block of memory containing the copied string.
  *
- * @param s
- * @param n
+ * @param s The string to duplicate.
+ * @param n The number of characters to copy.
  *
- * @return
+ * @return A pointer to the deep copied string.
  */
 char* mystrndup(const char *s, size_t n)
 {
+    char* newstr;
+    newstr = (char*) malloc(n + 1);
+
+    if (newstr == 0) return (char*)0;
+
+    mystrncpy(newstr, s, n);
+    if (newstr[(int)n] != '\0') newstr[(int)n] = '\0';
+    return newstr;
 }
 

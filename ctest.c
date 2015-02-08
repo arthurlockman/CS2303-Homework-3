@@ -67,5 +67,7 @@ int main()
     printf("a5 (too long to fit) = %s\n", a5);
     mystrncpy(a5, "This is a long", MAX_CHARS);
     printf("a5 = %s\n", a5);
+    char* p3 = mystrndup(a5, 4);
+    printf("p3 (copy of a5, truncated to 4 chars) = %s\n", p3);
     return 0;
 }
