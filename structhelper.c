@@ -142,3 +142,19 @@ Student** student_arr_dup(Student** source, size_t count)
     return student_arr;
 }
 
+/** 
+ * @brief 
+ * 
+ * @param s_arr
+ * @param count
+ */
+void free_student_arr(Student** s_arr, size_t count)
+{
+    size_t i;
+    for (i = 0; i < count; i++)
+    {
+        free(s_arr[i]);
+        s_arr[i] = NULL;
+    }
+}
+

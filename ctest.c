@@ -97,7 +97,10 @@ int main()
     Student** s6 = student_arr_dup(s5, 10);
     printf("Printing duplicate student array\n");
     print_student_n(s6, 10);
-
+    
+    //Demonstrate struct freeing function
+    free_student_arr(s6, 10);
+    printf("\nPrinting emptied pointer in s6[0] and s6[8]: %p, %p\n", s6[0], s6[8]);
     return 0;
 }
 
