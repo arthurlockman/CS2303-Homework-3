@@ -122,3 +122,23 @@ void print_student_n(Student** s_arr, size_t count)
     }
 }
 
+/** 
+ * @brief Shallow copy an array of students.
+ * 
+ * @param source The source array.
+ * @param count A count of the elements in the array.
+ * 
+ * @return The copied array.
+ */
+Student** student_arr_dup(Student** source, size_t count)
+{
+    //Copy array.
+    Student** student_arr = (Student **)malloc(count * sizeof(Student*));
+    size_t i;
+    for (i = 0; i < count; i++)
+    {
+        student_arr[i] = source[i];
+    }
+    return student_arr;
+}
+

@@ -21,6 +21,7 @@ char get_random_char();
 int get_random_int_range(int min, int max);
 Student** make_random_student_n(size_t n);
 void print_student_n(Student** s_arr, size_t count);
+Student** student_arr_dup(Student** source, size_t count);
 
 #endif
 

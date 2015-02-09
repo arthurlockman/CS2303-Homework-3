@@ -81,19 +81,23 @@ int main()
     Student* s2 = make_student("Saul Goodman", 4, 4.0);
     Student* s3 = make_student("Walter White", 5, 2.0);
     Student* s4 = make_random_student();
-    
+
     printf("Printing premade students\n");
     print_student(s1);
     print_student(s2);
-    print_student(s3); 
-    
+    print_student(s3);
+
     printf("Printing random students\n");
     print_student(s4);
-    
+
     Student** s5 = make_random_student_n(10);
     printf("Printing random student array\n");
     print_student_n(s5, 10);
-    
+
+    Student** s6 = student_arr_dup(s5, 10);
+    printf("Printing duplicate student array\n");
+    print_student_n(s6, 10);
 
     return 0;
 }
+
