@@ -153,4 +153,4 @@ To run ctest, simply compile the project and run the following in the project di
     
     Printing emptied pointer in s6[0] and s6[8]: 0x0, 0x0
 
-This program provides a complete test of all functions created for this assignment. To learn more about the functions in the project, go to http://users.wpi.edu/~ajlockman/cs2303assig3/ and read the function documentation for this homework assignment. 
+This program provides a complete test of all functions created for this assignment. To learn more about the functions in the project, go to http://users.wpi.edu/~ajlockman/cs2303assig3/ and read the function documentation for this homework assignment. The function output is somewwhat randomized due to the nature of how the data is created. Your output may look slightly different.
