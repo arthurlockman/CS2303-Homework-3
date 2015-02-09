@@ -23,6 +23,7 @@ Student** make_random_student_n(size_t n);
 void print_student_n(Student** s_arr, size_t count);
 Student** student_arr_dup(Student** source, size_t count);
 void free_student_arr(Student** s_arr, size_t count);
+Student** deep_copy_student_arr(Student** s_arr, size_t count);
 
 #endif
 

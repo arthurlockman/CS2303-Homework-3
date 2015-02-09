@@ -160,3 +160,24 @@ void free_student_arr(Student** s_arr, size_t count)
     }
 }
 
+/** 
+ * @brief Makes a deep copy of an array of student structs.
+ * This clones the original struct, rather than simply
+ * linking the new struct to the pointers already allocated 
+ * in the old one.
+ * 
+ * @param s_arr The student array to clone.
+ * @param count The number of elements in the student array.
+ * 
+ * @return A pointer to the copied array.
+ */
+Student** deep_copy_student_arr(Student** s_arr, size_t count)
+{
+    Student** student_cpy = (Student**)malloc(count * sizeof(Student)); 
+    size_t i;
+    for (i = 0; i < count; i++)
+    {
+        student_cpy[i] = make_student(s_arr[i]->name, s_arr[i]->grade, s_arr[i]->gpa);
+    }
+    return student_cpy;
+}
