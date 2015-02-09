@@ -2,6 +2,8 @@
 #include <string.h>
 #include "mystring.h"
 #include "structhelper.h"
+#include <stdlib.h>
+#include <time.h>
 
 /** ctest.c
  * Program to demonstrate character arrays and
@@ -13,6 +15,7 @@ const int MAX_CHARS = 20; // Maximum number of characters in array
 
 int main()
 {
+    srand (time(NULL));
     char a1[MAX_CHARS + 1]; // Character array--initially empty
     char a2[] = "Hello"; // Character array--unsized but initialized
     char a3[MAX_CHARS + 1]; // Character array--we will underfill it
@@ -77,9 +80,20 @@ int main()
     Student* s1 = make_student("Jesse Pinkman", 2, 3.5);
     Student* s2 = make_student("Saul Goodman", 4, 4.0);
     Student* s3 = make_student("Walter White", 5, 2.0);
+    Student* s4 = make_random_student();
+    
+    printf("Printing premade students\n");
     print_student(s1);
     print_student(s2);
-    print_student(s3);
+    print_student(s3); 
+    
+    printf("Printing random students\n");
+    print_student(s4);
+    
+    Student** s5 = make_random_student_n(10);
+    printf("Printing random student array\n");
+    print_student_n(s5, 10);
+    
 
     return 0;
 }

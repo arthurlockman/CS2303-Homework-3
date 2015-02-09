@@ -1,5 +1,8 @@
 #ifndef STRUCTHELPER_H
 #define STRUCTHELPER_H
+#include <stdint.h>
+#include "mystring.h"
+#include <stdio.h>
 
 /** 
  * @brief A struct used for holding information about a student.
@@ -12,6 +15,12 @@ typedef struct {
 
 Student* make_student(char* name, int grade, float gpa);
 void print_student(Student* s);
+Student* make_random_student();
+char* make_random_string(size_t length);
+char get_random_char();
+int get_random_int_range(int min, int max);
+Student** make_random_student_n(size_t n);
+void print_student_n(Student** s_arr, size_t count);
 
 #endif
 
