@@ -143,10 +143,12 @@ Student** student_arr_dup(Student** source, size_t count)
 }
 
 /** 
- * @brief 
+ * @brief Frees an array of students by freeing the associated
+ * pointers and then setting them to null. This returns the 
+ * array's memory back to the stack. 
  * 
- * @param s_arr
- * @param count
+ * @param s_arr The array to free.
+ * @param count Tne number of items in the array.
  */
 void free_student_arr(Student** s_arr, size_t count)
 {
