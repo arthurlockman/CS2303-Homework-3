@@ -1,5 +1,7 @@
-ctest: ctest.o mystring.o
-	gcc ctest.o mystring.o -o ctest
+all: ctest
+
+ctest: ctest.o mystring.o structhelper.o
+	gcc ctest.o mystring.o structhelper.o -o ctest
 
 ctest.o: ctest.c mystring.h
 	gcc -c ctest.c
@@ -7,8 +9,11 @@ ctest.o: ctest.c mystring.h
 mystring.o: mystring.c mystring.h
 	gcc -c mystring.c
 
+structhelper.o: structhelper.c structhelper.h mystring.h
+	gcc -c structhelper.c
+
 clean: 
-	rm -f mystring.o ctest.o ctest
+	rm -f mystring.o ctest.o structhelper.o ctest
 
 docs:
 	doxygen

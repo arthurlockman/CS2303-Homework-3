@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-// string.h covers the C-style string functions.
 #include "mystring.h"
+#include "structhelper.h"
 
 /** ctest.c
  * Program to demonstrate character arrays and
@@ -55,13 +55,15 @@ int main()
     printf("Pointer p2 = %p, contents = %s\n", p2, p2);
 
     //Test mystrcat and mystrncat
+    printf("\nTesting mystrcat and mystrncat\n");
     char a4[MAX_CHARS + 1];
     mystrcpy(a4, "Testing mystrcpy");
     copy_limit = MAX_CHARS - mystrlen(a4); // How much space is left?
     if (copy_limit > 0) mystrncat(a4, a3, copy_limit);
-    printf("\na4 = %s\n\n", a4);
+    printf("a4 = %s\n\n", a4);
 
     //Test mystrncpy and mystrndup
+    printf("Testing mystrncpy and mystrndup\n");
     char a5[MAX_CHARS + 1];
     mystrncpy(a5, "This is a long string that won't fit", MAX_CHARS);
     printf("a5 (too long to fit) = %s\n", a5);
@@ -69,5 +71,15 @@ int main()
     printf("a5 = %s\n", a5);
     char* p3 = mystrndup(a5, 4);
     printf("p3 (copy of a5, truncated to 4 chars) = %s\n", p3);
+
+    //Test struct creation and printing methods
+    printf("\nTesting student creation and printing methods.\n");
+    Student* s1 = make_student("Jesse Pinkman", 2, 3.5);
+    Student* s2 = make_student("Saul Goodman", 4, 4.0);
+    Student* s3 = make_student("Walter White", 5, 2.0);
+    print_student(s1);
+    print_student(s2);
+    print_student(s3);
+
     return 0;
 }
