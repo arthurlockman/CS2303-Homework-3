@@ -1,5 +1,5 @@
 # CS2303-Homework-3
-Homework 3 for WPI CS2303.
+Homework 3 for WPI CS2303. Documentation can be found at http://users.wpi.edu/~ajlockman/cs2303assig3/
 
 ##Compiling
 To compile, simply change into the directory of the project and type:
