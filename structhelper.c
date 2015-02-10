@@ -133,7 +133,7 @@ void print_student_n(Student** s_arr, size_t count)
 Student** student_arr_dup(Student** source, size_t count)
 {
     //Copy array.
-    Student** student_arr = (Student **)malloc(count * sizeof(Student*));
+    Student** student_arr = (Student **)malloc(count * sizeof(Student**));
     size_t i;
     for (i = 0; i < count; i++)
     {
